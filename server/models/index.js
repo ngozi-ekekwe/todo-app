@@ -8,6 +8,8 @@ const env       = process.env.NODE_ENV || 'development';
 const config    = require(__dirname + '/../config/config.js')[env];
 const db        = {};
 
+require('dotenv').config()
+
 let sequelize
 if (config.url) {
   sequelize = new Sequelize(config.url, config);
