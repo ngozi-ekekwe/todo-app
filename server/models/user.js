@@ -22,7 +22,13 @@ module.exports = (sequelize, DataTypes) => {
            user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10))
            return user;
         }
-      }
+      },
+
+      instanceMethods: {
+        validPassword(password) {
+          return bcrypt.compareSync(password, this.password);
+        }
+      },
     }
 );
 
