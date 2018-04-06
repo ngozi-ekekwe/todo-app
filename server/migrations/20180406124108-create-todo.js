@@ -11,6 +11,11 @@ module.exports = {
       title: {
         type: Sequelize.STRING
       },
+
+      complete: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
@@ -22,7 +27,7 @@ module.exports = {
       userId: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        reference: {
+        references: {
           model: 'Users',
           key: 'id'
           

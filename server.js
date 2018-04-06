@@ -2,13 +2,16 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
 require('dotenv').config();
+const Routes = require('./server/routes');
 
 const app = express();
+
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-port = 3000;
+Routes(app);
+port = process.env.PORT || 3000;
 
 app.get("*", (req, res) => {
     res.status(201).send({
@@ -18,4 +21,6 @@ app.get("*", (req, res) => {
 
 app.listen(port, () => {
     console.log(`app is running on port ${port}`)
-})
+});
+
+module.exports = app;
