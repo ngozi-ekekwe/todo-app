@@ -1,0 +1,45 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV=test mocha './tests/**/*.test.js'",
+    "test-setup": "npm run migration",
+    "migration": "NODE_ENV=test sequelize db:migrate",
+    "dev-start": "nodemon server.js",
+    "start": "node server.js",
+    "postinstall": "sequelize db:migrate"
+    
+  },
+  "engines": {
+    "node": "8.11.1",
+    "npm": "5.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngozi-ekekwe/todo-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ngozi-ekekwe/todo-app/issues"
+  },
+  "homepage": "https://github.com/ngozi-ekekwe/todo-app#readme",
+  "devDependencies": {
+    "morgan": "^1.9.0",
+    "nodemon": "^1.17.3"
+  }, 
+
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.2",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.2.1",
+    "pg": "^7.4.1",
+    "sequelize": "^4.37.6",
+    "sequelize-cli": "^4.0.0"
+  }
+}
