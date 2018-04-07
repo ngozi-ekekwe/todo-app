@@ -6,7 +6,6 @@ const db = require('../server/models')
 const request = supertest(app);
 const expect = chai.expect;
 
-let userId, todoId;
 
 describe('User Api', () => {
     before(() => {
@@ -17,13 +16,11 @@ describe('User Api', () => {
                     complete: "true",
                     userId: newUser.id
                 }).then((todo) => {
-                    todoId = todo.id
                 })
             })
     });
 
     after(() => db.sequelize.sync({ force: true }));
-
 
     describe('User create endpoint', () => {
         it ('POST /api/user should create a user', (done) => {
