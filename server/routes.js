@@ -10,4 +10,5 @@ module.exports = (app) => {
     app.get('/api/todos', todoController.list);
     app.put('/api/:todoId/todo/:userId', todoController.update);
     app.delete('/api/:todoId/todo/:userId', todoController.destroy);
+    app.get('/api/user/todos/:userId', todoController.retrieve)
 }

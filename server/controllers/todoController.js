@@ -21,6 +21,7 @@ module.exports = {
     },
 
     list(req, res) {
+
         return db.Todo
             .all()
             .then((todos) => {
@@ -43,6 +44,7 @@ module.exports = {
                 }
             })
             .then((todo) => {
+
                 if (!todo) {
                     return res.status(404).send({
                         message: "Todoitem not found"
@@ -57,6 +59,9 @@ module.exports = {
                     .catch((err) => {
                         res.status(401).send(err)
                     })
+            })
+            .catch((err) => {
+                return err
             })
     },
 
@@ -90,9 +95,8 @@ module.exports = {
 
     retrieve(req, res) {
         return db.Todo
-            .find({
+            .findAll({
                 where: {
-                    id: req.params.todoId,
                     userId: req.params.userId
                 }
             })
