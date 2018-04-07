@@ -17,6 +17,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 Routes(app);
 port = process.env.PORT || 3000;
 
+app.options('*', cors()) // include before other routes 
+
 app.get("*", (req, res) => {
     res.status(201).send({
         message: "My todo Api"
