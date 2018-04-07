@@ -4,8 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "NODE_ENV=test && mocha './tests/**/*.test.js'",
+    "test-setup": "npm run migration",
+    "migration": "NODE_ENV=test sequelize db:migrate",
     "start": "nodemon server.js"
+    
+  },
+  "engines": {
+    "node": "8.11.1",
+    "npm": "5.6.0"
   },
   "repository": {
     "type": "git",
