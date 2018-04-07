@@ -10,7 +10,6 @@
     "dev-start": "nodemon server.js",
     "start": "node server.js",
     "postinstall": "sequelize db:migrate"
-    
   },
   "engines": {
     "node": "8.11.1",
@@ -29,12 +28,12 @@
   "devDependencies": {
     "morgan": "^1.9.0",
     "nodemon": "^1.17.3"
-  }, 
-
+  },
   "dependencies": {
     "bcrypt": "^1.0.3",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
     "jsonwebtoken": "^8.2.1",
