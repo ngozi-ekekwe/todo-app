@@ -21,7 +21,6 @@ module.exports = {
     },
 
     list(req, res) {
-
         return db.Todo
             .all()
             .then((todos) => {
@@ -32,7 +31,6 @@ module.exports = {
             .catch((err) => {
                 res.status(401).send(err);
             })
-
     },
 
     update(req, res) {

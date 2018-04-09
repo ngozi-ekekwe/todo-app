@@ -18,7 +18,6 @@ module.exports = {
             });
         })
         .catch((err) => {
-            console.log(err.message)
             res.status(401).send(err)
         })
     },
@@ -43,10 +42,4 @@ module.exports = {
             });
           });
       },
-
-
-    logout(request, response) {
-        
-    },
-
 }
