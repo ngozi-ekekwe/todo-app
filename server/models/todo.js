@@ -10,6 +10,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: false
+    },
+
+    dayMarkedForCompletion: {
+      type: DataTypes.DATEONLY,
+      allowNull: false,
     }
   });
   Todo.associate = (models) => {

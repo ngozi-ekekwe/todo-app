@@ -6,7 +6,8 @@ module.exports = {
             .create({
                 title: req.body.title,
                 userId: req.params.userId,
-                complete: req.body.complete
+                complete: req.body.complete,
+                dayMarkedForCompletion: req.body.dayMarkedForCompletion
             })
             .then((todo) => {
                 res.status(201).send({
