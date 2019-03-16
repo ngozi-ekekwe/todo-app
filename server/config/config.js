@@ -3,7 +3,8 @@ require('dotenv').config()
 module.exports = {
   "development": {
     "url": process.env.DATABASE_STAGING_ENVIRONMENT,
-    "dialect": "postgres"
+    "dialect": "postgres",
+    operatorsAliases: false
   },
   "test": {
     "url": process.env.DATABASE_TEST_ENVIRONMENT,
